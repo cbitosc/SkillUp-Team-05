@@ -1,8 +1,7 @@
 from flask import Flask,jsonify
 from flask_restful import Api
 from flask_jwt_extended import JWTManager
-from resources.place import Phase,PlaceLogin,Checkusers,Registerstud,Userregistrstiondet,AdminAnnounce,Addcompany,UserAnnouncecheck,DateStatsforplace,Datestatsforcom,Datestatsforann
-
+from resources.place import Phase,PlaceLogin,Checkusers,Registerstud,Userregistrstiondet,AdminAnnounce,Addcompany,UserAnnouncecheck,DateStatsforplace,Datestatsforcom,Datestatsforann,userupdate
 
 app=Flask(__name__)
 app.config['PROPAGATE_EXCEPTIONS']=True
@@ -31,5 +30,7 @@ api.add_resource(Addcompany,'/addcomadmin')
 api.add_resource(DateStatsforplace,'/plastudate')
 api.add_resource(Datestatsforcom,'/comstudate')
 api.add_resource(Datestatsforann,'/anndate')
+api.add_resource(userupdate,'/userupdatein')
+
 if __name__ == "__main__":
     app.run()
