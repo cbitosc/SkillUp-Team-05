@@ -250,6 +250,48 @@ class Datestatsforann(Resource):
         except:
             return {"message":"There was an error cannot connect"},500
 
+class userupdate(Resource):
+    def get(self):
+        parser=reqparse.RequestParser()
+        parser.add_argument('roll_no',type=int,required=True,help='roll_no cannot be left blank')
+        data=parser.parse_args()
+        try:
+           x=query(f"""select * from stdnt.stdetails where roll_no={data['roll_no']};""",return_json=False)
+           if len(x)>0:return query(f"""select * from stdnt.stdetails where roll_no={data['roll_no']};""",return_json=False)
+           else: return {"message":"NO details found first sign up as student."},400 
+        except:
+            return {"message":"There was an error cannot connect"},500
 
+    def post(self):
+        parser=reqparse.RequestParser()
+        parser.add_argument('roll_no',type=int,required=True,help='roll_no cannot be left blank')
+        parser.add_argument('dept_name',type=str)
+        parser.add_argument('first_name',type=str)
+        parser.add_argument('last_name',type=str)
+        parser.add_argument('gpa',type=str)
+        parser.add_argument('password',type=str)
+        parser.add_argument('dateregst',type=str)
+        data=parser.parse_args()
+        try:
+            if data['dept_name']==None and data['first_name']==None and data['last_name']==None and data['gpa']==None and data['password']==None and data['dateregst']==None:
+               return {"message":"No details for updation."},400 
+            if data['dept_name']!=None:
+                 x=query(f"""SELECT * FROM stdnt.deptdetails where dept_name='{data['dept_name']}';""",return_json=False)
+                 if (len(x)==0):
+                       query(f"""insert into stdnt.deptdetails values('{data['dept_name']}');""",return_json=False)
+                 query(f"""update stdnt.stdetails set dept_name='{data['dept_name']}' where roll_no={data['roll_no']};""",return_json=False)
+            if data['first_name']!=None:
+                query(f"""update stdnt.stdetails set first_name='{data['first_name']}' where roll_no={data['roll_no']};""",return_json=False)
+            if data['last_name']!=None:
+                query(f"""update stdnt.stdetails set last_name='{data['last_name']}' where roll_no={data['roll_no']};""",return_json=False)
+            if data['gpa']!=None:
+                query(f"""update stdnt.stdetails set gpa='{data['gpa']}' where roll_no={data['roll_no']};""",return_json=False)
+            if data['password']!=None:
+                query(f"""update stdnt.stdetails set password='{data['password']}' where roll_no={data['roll_no']};""",return_json=False)
+            if data['dateregst']!=None:
+                query(f"""update stdnt.stdetails set dateregst='{data['dateregst']}' where roll_no={data['roll_no']};""",return_json=False)
+            return {"message":"success updated."},201 
+        except:
+            return {"message":"There was an error cannot connect"},500
 
 
