@@ -1,0 +1,22 @@
+{% extends "home/base.html" %}
+{% block content %}
+			
+			
+			<form action="{%url 'adminannounce'%}"  method="POST">
+				{%csrf_token%}
+				  <label for="type">Type:</label><br>
+				  <input type="text" name="type" ><br>
+				    <label for="title_description">Title Description:</label><br>
+				     <input type="text" name="title_description" ><br>
+				      <label for="date_event">Date:</label><br>
+				      <input type="text" name="date_event" ><br>
+				      <label for="time_event">Time:</label><br>
+				      <input type="text" name="time_event" ><br>
+				      <label for="event_description">Description:</label><br>
+				      <input type="text" name="event_description" ><br>
+				      <label for="image_link">Image Link:</label><br>
+				      <input type="text" name="image_link" ><br>
+				      <input type="submit" value="submit">
+			</form>
+			
+{% endblock content%}

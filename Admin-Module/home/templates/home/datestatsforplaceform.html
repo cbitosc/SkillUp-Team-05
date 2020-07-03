@@ -1,0 +1,9 @@
+{% extends "home/base.html" %}
+{% block content %}
+<h3>Enter the date to get info</h3>
+	<form action="{%url 'date-stats-place'%}"  method="POST">
+			{%csrf_token%}
+			 <label for="Date">Date:</label><br>
+				  <input type="text" name="Date" ><br>
+				  <input type="submit" value="submit">
+{% endblock content%}

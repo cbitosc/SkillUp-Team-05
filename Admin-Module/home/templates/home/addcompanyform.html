@@ -1,0 +1,19 @@
+{% extends "home/base.html" %}
+{% block content %}
+			
+			<form action="{%url 'addcompany'%}"  method="POST">
+				{%csrf_token%}
+				  <label for="company_name">company name:</label><br>
+				  <input type="text" name="company_name" ><br>
+				    <label for="job_name">Job name:</label><br>
+				     <input type="text" name="job_name" ><br>
+				      <label for="job_description">Description:</label><br>
+				      <input type="text" name="job_description" ><br>
+				      <label for="job_requirements">Requirements:</label><br>
+				      <input type="text" name="job_name" ><br>
+				      <label for="min_gpa">Minimum gpa:</label><br>
+				      <input type="text" name="min_gpa" ><br>
+				      <input type="submit" value="submit">
+			</form>
+			
+{%endblock content%}

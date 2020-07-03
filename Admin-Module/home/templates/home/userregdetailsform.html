@@ -1,0 +1,11 @@
+{% extends "home/base.html" %}
+{% block content %}
+			
+			<form action="{%url 'userregdetails'%}"  method="POST">
+				{%csrf_token%}
+				<h3> Enter the company name </h3>
+				  <label for="company_name">Company Name:</label><br>
+				  <input type="text" name="company_name" ><br>
+				      <input type="submit" value="submit">
+			</form>
+{% endblock content%}

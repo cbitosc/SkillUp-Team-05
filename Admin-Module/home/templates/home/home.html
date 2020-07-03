@@ -1,0 +1,75 @@
+{% extends "home/base.html" %}
+{% block content %}
+ {% if user.is_authenticated %}
+	<div class="row">
+	  <div class="col-sm-4">
+	    <div class="card">
+	      <div class="card-body">
+	        <h5 class="card-title">Check Users</h5>
+	        <p class="card-text">Click here to check users who registered for the placement portal</p>
+	        <a href="{%url 'check-user'%}" class="btn btn-primary">Check</a>
+	      </div>
+	    </div>
+	  </div>
+
+
+	  <div class="col-sm-4">
+	    <div class="card">
+	      <div class="card-body">
+	        <h5 class="card-title">New Company</h5>
+	        <p class="card-text">Click here to add a new company into the database.</p>
+	        <a href="{% url 'addcompanyform'%}" class="btn btn-primary">Add</a>
+	      </div>
+	    </div>
+	  </div>
+
+
+	   <div class="col-sm-4">
+	    <div class="card">
+	      <div class="card-body">
+	        <h5 class="card-title">User Details</h5>
+	        <p class="card-text">Click here to check Student registration Details for a specific company </p>
+	        <a href="{% url 'userregdetailsform'%}" class="btn btn-primary">Check</a>
+	      </div>
+	    </div>
+	  </div>
+
+
+	   <div class="col-sm-4">
+	    <div class="card">
+	      <div class="card-body">
+	        <h5 class="card-title">Date Stats for placements</h5>
+	        <p class="card-text"> Click here to check users who registered for the portal on a specified date.</p>
+	        <a href="{% url 'date-stats-place-form'%}" class="btn btn-primary">Check</a>
+	      </div>
+	    </div>
+	  </div>
+
+
+	   <div class="col-sm-4">
+	    <div class="card">
+	      <div class="card-body">
+	        <h5 class="card-title">Date Stats for companies</h5>
+	        <p class="card-text">Click here to check users who registered for the companies on a specified date.</p>
+	        <a href="{% url 'date-stats-com-form'%}" class="btn btn-primary">Check</a>
+	      </div>
+	    </div>
+	  </div>
+
+
+	   <div class="col-sm-4">
+	    <div class="card">
+	      <div class="card-body">
+	        <h5 class="card-title">Check Announcements</h5>
+	        <p class="card-text">Click here to get details of announcements for a specified date </p>
+	        <a href="{% url 'date-stats-ann-form'%}" class="btn btn-primary">Check</a>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+ {% else %}
+ 	<h2> Login to Access and Update Details</h2>
+ {% endif %}
+
+
+{% endblock content%}
