@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#19649B</color>
+    <color name="colorPrimaryDark">#003a6c</color>
+    <color name="colorAccent">#5791cc</color>
+
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="app_snack_bar_true">#27BE60</color>
+    <color name="mainColorPrimary">#C4172C</color>
+
+    <color name="transparent">#0000</color>
+
+
+    <color name="gray_dark">#353535</color>
+    <color name="light_new_gray">#C45C5C5C</color>
+    <color name="text_color">#404040</color>
+    <color name="normal_text_color">#5c5c5c</color>
+    <color name="hash_text_color">#999999</color>
+    <color name="light_gray">#C4C4C4</color>
+    <color name="very_light_gray">#F3F0F0</color>
+    <color name="gray_medium_tranparent">#75171d29</color>
+
+    <color name="project_color">#19649B</color>
+
+    <color name="project_color_second">#003a6c</color>
+
+</resources>
